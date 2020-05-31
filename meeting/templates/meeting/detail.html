@@ -1,0 +1,14 @@
+
+{{ meeting }}
+<h1>{{ meeting.description }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'meeting:vote' meeting.id %}" method="post">
+{% csrf_token %}
+{% for meeting_item in meeting.meeting_item_set.all %}
+    <input type="radio" name="meeting_item" id="meeting_item{{ forloop.counter }}" value="{{ meeting_item.id }}" />
+    <label for="choice{{ forloop.counter }}">{{ meeting_item.item_description }}</label><br />
+{% endfor %}
+<input type="submit" value="Save" />
+</form>

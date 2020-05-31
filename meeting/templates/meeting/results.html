@@ -1,0 +1,9 @@
+<h1>{{ meeting.description }}</h1>
+
+<ul>
+{% for meeting_item in meeting.meeting_item_set.all %}
+    <li>{{ meeting_item.item_description }} -- {{ meeting_item.item_status }}</li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'meeting:detail' meeting.id %}">Add again?</a>

@@ -1,0 +1,13 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'meeting/style.css' %}" />
+
+{% if latest_meeting_list %}
+    <ul>
+    {% for meeting in latest_meeting_list %}
+        <li><a href="{% url 'meeting:detail' meeting.id %}">{{ meeting.description }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No meetings are available.</p>
+{% endif %}
