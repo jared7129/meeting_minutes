@@ -2,6 +2,7 @@ from django.db import models
 from django.conf import settings
 import datetime
 from django.utils import timezone
+from django.core.exceptions import ValidationError
 
 
 TYPE = ['MANCO', 'Finance', 'Project Team Leaders']
@@ -25,6 +26,11 @@ class Meeting(models.Model):
 	was_published_recently.admin_order_field = 'pub_date'
 	was_published_recently.boolean = True
 	was_published_recently.short_description = 'Published recently?'
+
+	def clean(self):
+		if self.date_from > self.date_to:
+			raise ValidationError("Dates are incorrect")
+
 
 class Meeting_Item(models.Model):
 	meeting = models.ForeignKey(Meeting)

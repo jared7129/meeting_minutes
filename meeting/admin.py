@@ -8,8 +8,9 @@ from .models import Meeting, Meeting_Item
 
 
 class MeetingItemInline(admin.StackedInline):
-    model = Meeting_Item
-    extra = 0
+
+		model = Meeting_Item
+		extra = 0
 
 
 class MeetingAdmin(admin.ModelAdmin):
@@ -24,5 +25,7 @@ class MeetingAdmin(admin.ModelAdmin):
 	inlines = [MeetingItemInline]
 
 	list_display = ('description', 'meeting_type','pub_date', 'was_published_recently')
+
+	list_filter = ['pub_date']
 
 admin.site.register(Meeting, MeetingAdmin)
