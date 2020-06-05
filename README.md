@@ -18,5 +18,5 @@
 
 default account details are:
 
-Username : jared
-Password : d4t4prop
+-Username : jared
+-Password : d4t4prop
