@@ -18,5 +18,8 @@
 
 default account details are:
 
--Username : jared
--Password : d4t4prop
+ -Username : jared
+ -Password : d4t4prop
+ 
+ 
+**NB : THE PROJECT USES DJANGO ADMIN FRAMEWORK, AS SUCH IT USES DJANGO'S BASIC CRUD FUNCTIONALITY, AS WELL AS DJANGO'S AUTHENTICATION SYSTEM**
