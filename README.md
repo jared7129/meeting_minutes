@@ -4,7 +4,7 @@
 
 1. git clone it on a django 1.1 environment
 
-2. run : python manage.py createsuperuser and enter in:
+2. run : **python manage.py createsuperuser** and enter in:
    - username
    - password
    - email address
